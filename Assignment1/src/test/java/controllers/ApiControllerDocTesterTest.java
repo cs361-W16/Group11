@@ -29,7 +29,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import models.Deck;
 import models.Card;
-
+import models.acesUp;
 
 public class ApiControllerDocTesterTest extends NinjaDocTester {
     
@@ -62,6 +62,12 @@ public class ApiControllerDocTesterTest extends NinjaDocTester {
         Deck deck = new Deck();
         assertNotNull(deck);
 
+    }
+
+    @Test
+    public void testDeckCount() {
+        Deck deck = new Deck();
+        assertEquals(52, deck.cardsLeft());
     }
 
 }
