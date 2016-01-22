@@ -66,4 +66,17 @@ public class Deck {
         return (deck.length == 54);
     }
 
+    /**
+     * As cards are dealt from the deck, the number of cards left
+     * decreases.  This function returns the number of cards that
+     * are still left in the deck.  The return value would be
+     * 52 or 54 (depending on whether the deck includes Jokers)
+     * when the deck is first created or after the deck has been
+     * shuffled.  It decreases by 1 each time the dealCard() method
+     * is called.
+     */
+    public int cardsLeft() {
+        return deck.length - cardsUsed;
+    }
+
 } // end class Deck
