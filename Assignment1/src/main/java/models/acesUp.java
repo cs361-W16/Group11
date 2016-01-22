@@ -8,18 +8,13 @@ import java.util.ArrayList;
 
 public class acesUp {
 
-    private ArrayList<Card> board;   // The cards on the board.
+    private static int COLNUM = 4;
+    private static int ROWNUM = 21;
+    private Card[][] board;
+
+
 
     /**
-     * Create a board that is initially empty. (1D array)
-     * 0 - 3 (First 4 cards)
-     * 4 - 7 (Next 4 cards on top of the first 4 cards)
-     */
-    public acesUp() {
-        board = new ArrayList<Card>();
-    }
-
-    /*
     Sets up the variables to keep track of the game state
      */
     public static void main(String[] args) {
@@ -29,8 +24,19 @@ public class acesUp {
 
     }
 
-    private static int play() {
+    public int play() {
+        //Prepares a new deck
         Deck deck = new Deck();
+
+        /**
+         * Create a board that is initially empty. (2D array)
+         * 1st dimension will keep track of the columns
+         * 2nd dimension will keep track of the rows (like a stack)
+         */
+        board = new Card[COLNUM][ROWNUM];
+
+
+
         return 0; //only temporary
     }
 

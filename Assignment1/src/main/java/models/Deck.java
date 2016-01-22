@@ -45,7 +45,7 @@ public class Deck {
             deck = new Card[52];
         int cardCt = 0; // How many cards have been created so far.
         for ( int suit = 0; suit <= 3; suit++ ) {
-            for ( int value = 1; value <= 13; value++ ) {
+            for ( int value = 2; value <= 14; value++ ) {
                 deck[cardCt] = new Card(value,suit);
                 cardCt++;
             }
@@ -78,5 +78,6 @@ public class Deck {
     public int cardsLeft() {
         return deck.length - cardsUsed;
     }
+
 
 } // end class Deck

@@ -21,10 +21,11 @@ public class Card {
     public final static int CLUBS = 3;
     public final static int JOKER = 4;
 
-    public final static int ACE = 1;      // Codes for the non-numeric cards.
     public final static int JACK = 11;    //   Cards 2 through 10 have their
     public final static int QUEEN = 12;   //   numerical values for their codes.
     public final static int KING = 13;
+    public final static int ACE = 14;     //   Aces High
+
 
     /**
      * This card's suit, one of the constants SPADES, HEARTS, DIAMONDS,
@@ -65,7 +66,7 @@ public class Card {
         if (theSuit != SPADES && theSuit != HEARTS && theSuit != DIAMONDS &&
                 theSuit != CLUBS && theSuit != JOKER)
             throw new IllegalArgumentException("Illegal playing card suit");
-        if (theSuit != JOKER && (theValue < 1 || theValue > 13))
+        if (theSuit != JOKER && (theValue < 2 || theValue > 14))
             throw new IllegalArgumentException("Illegal playing card value");
         value = theValue;
         suit = theSuit;
@@ -115,7 +116,6 @@ public class Card {
             return "" + value;
         else {
             switch ( value ) {
-                case 1:   return "Ace";
                 case 2:   return "2";
                 case 3:   return "3";
                 case 4:   return "4";
@@ -127,7 +127,8 @@ public class Card {
                 case 10:  return "10";
                 case 11:  return "Jack";
                 case 12:  return "Queen";
-                default:  return "King";
+                case 13:  return "King";
+                default:  return "Ace";
             }
         }
     }
