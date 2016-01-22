@@ -48,7 +48,7 @@ public class Card {
      */
     public Card() {
         suit = JOKER;
-        value = 1;
+        value = 14;
     }
 
     /**
@@ -142,10 +142,7 @@ public class Card {
      */
     public String toString() {
         if (suit == JOKER) {
-            if (value == 1)
-                return "Joker";
-            else
-                return "Joker #" + value;
+            return "Joker";
         }
         else
             return getValueAsString() + " of " + getSuitAsString();
