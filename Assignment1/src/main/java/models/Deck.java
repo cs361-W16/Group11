@@ -1,5 +1,9 @@
 package models;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
+
 /**
  *  An object of type Deck represents a deck of playing cards.  The deck
  *  is a regular poker deck that contains 52 regular cards and that can
@@ -54,6 +58,7 @@ public class Deck {
             deck[52] = new Card(1,Card.JOKER);
             deck[53] = new Card(2,Card.JOKER);
         }
+        shuffle();
         cardsUsed = 0;
     }
 
@@ -77,6 +82,29 @@ public class Deck {
      */
     public int cardsLeft() {
         return deck.length - cardsUsed;
+    }
+
+
+    public int getDeckLength(){
+        return deck.length;
+    }
+    public void shuffle(){
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        for ( int i = 0; i < deck.length; i++ ) list.add(i);
+        Collections.shuffle(list);
+        Card[] temp = new Card[deck.length];
+        for(int i=0; i<deck.length; i++) temp[i] = deck[i];
+        for(int i=0; i<deck.length; i++) deck[list.get(i)] = temp[i];
+    }
+    public Card hit(){
+        if(cardsLeft() == 0) return null;       //return null if the deck were empty
+
+        int i = 0;
+        while(deck[i] == null) i++;
+        Card card = deck[i];
+        deck[i] = null;           //insert null to the used card's place
+        cardsUsed++;
+        return card;
     }
 
 
