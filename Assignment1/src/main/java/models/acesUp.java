@@ -34,6 +34,7 @@ public class acesUp {
          */
         board = new Card[COLNUM][ROWNUM];
 
+        //This while loop will track the game state
         while(deck.cardsLeft() > 0) {
             //GAME CODE WILL RESIDE HERE
             deal.deal(deck, board);
