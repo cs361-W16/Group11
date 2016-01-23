@@ -3,6 +3,7 @@ package models;
 /**
  * Created by Shotaro Matsui on 2016/01/22.
  */
+ 
 public class Deal{
     public static int[] getTopRows(Card[][] board){
         int[] tops = new int[board.length];
