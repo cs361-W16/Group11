@@ -1,7 +1,7 @@
 package models;
 
 /**
- * Created by danielgoh on 1/21/16.
+ * Created by danielgoh on 1/21/16..
  */
 /**
  * An object of type Card represents a playing card from a
